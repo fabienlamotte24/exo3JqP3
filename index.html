@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="assets/jq/jquery-3.2.1.js"></script>
+  <title>Exercice 1</title>
+</head>
+<body>
+  <form>
+    <input type="text" name="choix" placeholder="choix" id="choix" />
+    <button type="button" name="button" id="envoyer">Envoyer</button>
+  </form>
+  <script>
+  var devinette = 52;
+  var essai = 0;
+  var regex = /^[\d]+$/
+$(document).ready(function(){
+  $('#envoyer').click(function(){
+    essai++;
+    var reponse = $('#choix').val();
+if (regex.test(reponse) == true && reponse <= 100) {
+  if (reponse < devinette){
+    alert('C\'est plus');
+  } else if (reponse > devinette) {
+    alert('C\'est moins');
+  } else {
+    alert('Correct ! \n Vous totalisez ' + essai + ' essai pour cette partie');
+  }
+} else {
+  alert('Veuillez choisir un nombre entre 0 et 100');
+}
+  });
+});
+  </script>
+</body>
+</html>
